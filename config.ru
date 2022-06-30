@@ -1,3 +1,7 @@
+require 'sentry-ruby'
+Sentry.init do |config|
+  config.traces_sample_rate = 1.0
+end
 require 'active_record'
 ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
 
