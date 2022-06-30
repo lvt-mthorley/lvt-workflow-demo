@@ -8,4 +8,4 @@ ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://local
 class Example < ActiveRecord::Base
 end
 
-run lambda { |env| env['REQUEST_PATH'] == '/' ? [200, {'Content-Type'=>'text/plain'}, StringIO.new("Hello #{Example.first.name}!\n")] : [404, {'Content-Type'=>'text/plain'}, StringIO.new("Not found\n")]}
+run lambda { |env| env['REQUEST_PATH'] == '/' ? [200, {'Content-Type'=>'text/plain'}, StringIO.new("Hello #{Example.first.name}! Check out review apps\n")] : [404, {'Content-Type'=>'text/plain'}, StringIO.new("Not found\n")]}
